@@ -21,6 +21,7 @@ import './App.css'
 
 const RidePoolPage  = lazy(() => import('./components/RidePool/RidePoolPage').then(m => ({ default: m.RidePoolPage })))
 const AnalyticsPage = lazy(() => import('./components/Analytics/AnalyticsPage').then(m => ({ default: m.AnalyticsPage })))
+const FeedbackPage  = lazy(() => import('./components/Feedback/FeedbackPage').then(m => ({ default: m.FeedbackPage })))
 const MapView       = lazy(() => import('./components/MapView/MapView').then(m => ({ default: m.MapView })))
 
 initTransitData()
@@ -393,6 +394,7 @@ function TabBar({ view, setView }) {
     { id: 'transit',   label: t.tabTransit   || 'Transit',   icon: '🚌' },
     { id: 'ridepool',  label: t.tabRidepool  || 'RidePool',  icon: '🚗', badge: 'BETA' },
     { id: 'analytics', label: t.tabAnalytics || 'Analytics', icon: '📊' },
+    { id: 'feedback',  label: t.tabFeedback  || 'Feedback',  icon: '💬' },
   ]
   return (
     <div className="tab-bar" role="tablist">
@@ -425,6 +427,7 @@ export default function App() {
         <Suspense fallback={<div className="tab-loading" aria-live="polite">Loading…</div>}>
           {view === 'ridepool'  && <RidePoolPage />}
           {view === 'analytics' && <AnalyticsPage />}
+          {view === 'feedback'  && <FeedbackPage />}
         </Suspense>
         <BetaStatusBar />
       </div>
