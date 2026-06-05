@@ -1,0 +1,30 @@
+Categories:
+  - Navigation
+  - Science
+
+License: GPL-3.0-only
+
+AuthorName: Satvika Kalla (Swecha Internship)
+AuthorEmail: tryaxistech@gmail.com
+AuthorWebSite: https://swecha.org
+
+SourceCode: https://github.com/satvika1115/TravelMate
+IssueTracker: https://github.com/satvika1115/TravelMate/issues
+
+AutoName: TravelMate
+
+RepoType: git
+Repo: https://github.com/satvika1115/TravelMate.git
+
+Builds:
+  - versionName: 0.9.0-beta
+    versionCode: 1
+    commit: 8744b75e54959bbbbe405f04dfaf497461dae32d
+    subdir: frontend/android
+    gradle:
+      - release
+
+AutoUpdateMode: Version v%v
+UpdateCheckMode: Tags
+CurrentVersion: 0.9.0-beta
+CurrentVersionCode: 1
