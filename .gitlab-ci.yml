@@ -1,0 +1,14 @@
+stages:
+  - build
+
+build:
+  stage: build
+  image: node:20
+  script:
+    - cd frontend
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - frontend/dist/
+    expire_in: 1 week
