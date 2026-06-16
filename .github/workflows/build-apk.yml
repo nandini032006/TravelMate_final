@@ -34,9 +34,10 @@ jobs:
         working-directory: frontend
         run: npm run build
 
-      - name: Sync Capacitor
-        working-directory: frontend
-        run: npx cap sync android --no-interactive
+      - name: Copy web assets to Android
+        run: |
+          rm -rf frontend/android/app/src/main/assets/public
+          cp -r frontend/dist frontend/android/app/src/main/assets/public
 
       - name: Build APK
         working-directory: frontend/android
