@@ -36,7 +36,7 @@ jobs:
 
       - name: Sync Capacitor
         working-directory: frontend
-        run: npx cap sync android
+        run: npx cap sync android --no-interactive
 
       - name: Build APK
         working-directory: frontend/android
