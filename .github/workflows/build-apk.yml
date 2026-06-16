@@ -39,6 +39,11 @@ jobs:
           rm -rf frontend/android/app/src/main/assets/public
           cp -r frontend/dist frontend/android/app/src/main/assets/public
 
+      - name: Fix local.properties
+        run: |
+          rm -f frontend/android/local.properties
+          echo "sdk.dir=$ANDROID_HOME" > frontend/android/local.properties
+
       - name: Build APK
         working-directory: frontend/android
         run: chmod +x gradlew && ./gradlew assembleDebug
